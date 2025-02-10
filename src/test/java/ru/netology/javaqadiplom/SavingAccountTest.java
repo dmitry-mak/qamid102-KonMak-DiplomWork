@@ -204,6 +204,7 @@ public class SavingAccountTest {
     public void yearChange() {
 
         initialBalance = 2_128_396_701;
+        maxBalance = 2_130_000_000;
         rate = 15;
 
         SavingAccount account = new SavingAccount(initialBalance, minBalance, maxBalance, rate);
