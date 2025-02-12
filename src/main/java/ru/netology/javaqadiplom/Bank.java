@@ -17,8 +17,12 @@ public class Bank {
         if (amount <= 0) {
             return false;
         }
-        if (from.pay(amount)) {
-            to.add(amount);
+        if(!from.pay(amount)){
+            return false; // возвращаем false если нельзя списать amount со счета from
+        }
+        if (!to.add(amount)) {
+            from.add(amount); // отмена списания, если нельзя добавить amount на счет to.
+            return false;
         }
         return true;
     }
